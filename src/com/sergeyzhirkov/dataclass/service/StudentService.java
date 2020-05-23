@@ -1,9 +1,9 @@
-package com.sergeyzhirkov.dataclass.services;
+package com.sergeyzhirkov.dataclass.service;
 
 import com.sergeyzhirkov.dataclass.data.Student;
 
 public class StudentService {
-    private final Student student;
+    private Student student;
 
     public StudentService(Student student) {
         this.student = student;
@@ -12,7 +12,7 @@ public class StudentService {
     public boolean validation() {
         return validateFirstName() &&
                 validateLastName() &&
-                validateMiddleName() &&
+                validatePatronicName() &&
                 validateDateOfBirth() &&
                 validateAverageRating() &&
                 validateCourse() &&
@@ -34,8 +34,8 @@ public class StudentService {
         return student.getLastName() != null;
     }
 
-    public boolean validateMiddleName() {
-        return student.getMiddleName() != null;
+    public boolean validatePatronicName() {
+        return student.getPatronimicName() != null;
     }
 
     public boolean validateDateOfBirth() {
@@ -43,7 +43,9 @@ public class StudentService {
     }
 
     public boolean validateFaculty() {
-        return (student.getFaculty() != null);
+        return (student.getFaculty() != null) &&
+                (student.getFaculty().equals("Мех-мат") ||
+                        student.getFaculty().equals("Фил-фак"));
     }
 
     public boolean validateDateOfCrediting() {
@@ -55,11 +57,15 @@ public class StudentService {
     }
 
     public boolean validateFormOfTraining() {
-        return (student.getFormOfTraining() != null);
+        return (student.getFormOfTraining() != null) &&
+                (student.getFormOfTraining().equals("очная") ||
+                        student.getFormOfTraining().equals("заочная"));
     }
 
     public boolean validateFormOfPayment() {
-        return (student.getFormOfPayment() != null);
+        return (student.getFormOfPayment() != null) &&
+                (student.getFormOfPayment().equals("бюджет") ||
+                        student.getFormOfPayment().equals("платно"));
     }
 
     public boolean validateGroupNumber() {
@@ -72,7 +78,9 @@ public class StudentService {
 
 
     public boolean validateSpecialization() {
-        return (student.getSpecialization() != null);
+        return (student.getSpecialization() != null) &&
+                (student.getSpecialization().equals("бакалавр") ||
+                        student.getSpecialization().equals("магистр"));
     }
 
     public boolean validateAverageRating() {

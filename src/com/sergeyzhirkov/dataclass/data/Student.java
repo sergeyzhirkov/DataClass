@@ -5,16 +5,16 @@ import java.util.Date;
 public class Student {
     private String firstName;           // имя
     private String lastName;            // фамилия
-    private String middleName;      // отчество
+    private String patronimicName;      // отчество
     private Date dateOfBirth;           // дата рождения
-    private Faculty faculty;             // факультет
+    private String faculty;             // факультет
     private Date dateOfCrediting;       // дата зачисления
     private int course;                 // курс
-    private FormOfTraining formOfTraining;      // форма обучения
-    private FormOfPayment formOfPayment;       // форма оплаты
+    private String formOfTraining;      // форма обучения
+    private String formOfPayment;       // форма оплаты
     private int groupNumber;            // номер группы
     private int resultEGE;              // результаты ЕГЭ при поступлении
-    private Specialization specialization;      // специализация
+    private String specialization;      // специализация
     private double averageRating;       // средняя оценка
     private boolean militaryDuty;       // военная обязаность
     private int grant;                  // стипендия
@@ -22,10 +22,10 @@ public class Student {
     public Student() {
     }
 
-    public Student(String lastName, String firstName, String middleName, Date dateOfBirth) {
+    public Student(String lastName, String firstName, String patronimicName, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.middleName = middleName;
+        this.patronimicName = patronimicName;
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -45,12 +45,12 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getPatronimicName() {
+        return patronimicName;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public void setPatronimicName(String patronimicName) {
+        this.patronimicName = patronimicName;
     }
 
     public Date getDateOfBirth() {
@@ -61,11 +61,11 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Faculty getFaculty() {
+    public String getFaculty() {
         return faculty;
     }
 
-    public void setFaculty(Faculty faculty) {
+    public void setFaculty(String faculty) {
         this.faculty = faculty;
     }
 
@@ -85,19 +85,19 @@ public class Student {
         this.course = course;
     }
 
-    public FormOfTraining getFormOfTraining() {
+    public String getFormOfTraining() {
         return formOfTraining;
     }
 
-    public void setFormOfTraining(FormOfTraining formOfTraining) {
+    public void setFormOfTraining(String formOfTraining) {
         this.formOfTraining = formOfTraining;
     }
 
-    public FormOfPayment getFormOfPayment() {
+    public String getFormOfPayment() {
         return formOfPayment;
     }
 
-    public void setFormOfPayment(FormOfPayment formOfPayment) {
+    public void setFormOfPayment(String formOfPayment) {
         this.formOfPayment = formOfPayment;
     }
 
@@ -117,11 +117,11 @@ public class Student {
         this.resultEGE = resultEGE;
     }
 
-    public Specialization getSpecialization() {
+    public String getSpecialization() {
         return specialization;
     }
 
-    public void setSpecialization(Specialization specialization) {
+    public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
 
